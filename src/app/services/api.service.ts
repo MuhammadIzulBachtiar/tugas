@@ -56,6 +56,10 @@ login(email: any,password: any)
 {
   return this.http.post(this.serverUrl+'auth/login',{email:email, password:password});
 }
-
+//upload file
+upload(file: any)
+{
+   return this.http.post(this.serverUrl+'upload/book',file);
+}
 
 }
