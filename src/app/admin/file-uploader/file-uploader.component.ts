@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -13,10 +13,11 @@ export class FileUploaderComponent implements OnInit {
   constructor(
     public api:ApiService,
     public dialogRef:MatDialogRef<FileUploaderComponent>,
-  
+    @Inject(MAT_DIALOG_DATA) public dialogData: any
   ) { }
 
   ngOnInit(): void {
+    console.log(this.dialogData);
   }
 
   selectedFile:any; 
@@ -47,6 +48,7 @@ export class FileUploaderComponent implements OnInit {
    if(data.status == true)
    {
      //lakukan update data produk disini
+     this.updateBook(data);
      alert('File berhasil diunggah');
      //kode tambahan
      this.loadingUpload=false;
@@ -54,5 +56,12 @@ export class FileUploaderComponent implements OnInit {
    }else{
      alert(data.message);
    }
+ }
+
+ updateBook(data:any)
+ {
+   this.api.put('book/'+this.dialogData.id, {url:data.url}).subscribe(res=>{
+     console.log(res);
+   })
  }
 }
