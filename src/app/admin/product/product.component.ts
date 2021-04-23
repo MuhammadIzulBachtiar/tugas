@@ -25,16 +25,28 @@ export class ProductComponent implements OnInit {
  }
  loading:boolean | undefined;
  getBooks()
- {
-  this.loading=true;
-   this.api.get('books').subscribe(result=>{
-     this.books=result;
-     this.loading=false;
-   }, _error=>{
-    this.loading=false;
-    alert('Tidak dapat mengambil data');
-  })     
- }
+  {
+    this.loading=true;
+    this.api.get('bookswithauth').subscribe(result=>{
+      this.books=result;
+      this.loading=false;
+    },error=>{
+      this.loading=false;
+      alert('Ada masalah saat pengambilan data. Coba lagi');
+    })
+    /*
+    this.loading=true;
+    this.api.get('books').subscribe(result=>{
+      this.books=result;
+      this.loading=false;
+    },error=>{
+      this.loading=false;
+      alert('Ada masalah saat pengambilan data. Coba lagi');
+    })
+    */
+  }
+
+
  productDetail(data: any,idx: number)
  {
    let dialog=this.dialog.open(ProductDetailComponent, {
@@ -49,6 +61,7 @@ export class ProductComponent implements OnInit {
      }
    })
  }
+ 
  loadingDelete:any={};
  deleteProduct(idx: string | number)
  {
