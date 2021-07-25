@@ -1,20 +1,28 @@
 <div class="uk-flex uk-flex-middle uk-flex-center uk-height-viewport">  
     <mat-card class="uk-width-1-3@m">
-        <div class="uk-flex uk-flex-center uk-margin-medium-bottom">
-            <h3>Forgot Password</h3>
+        <div class="uk-flex uk-flex-center">
+            <img src="assets/picture/logo.png" style="width:200px;height:200px;"><i></i>
+        </div>
+        <div class="uk-flex uk-flex-center">
+          <h3 style="color:#4f4f4f"><b>Lupa Password</b></h3>
         </div>
       <mat-card-content>
-        <mat-form-field class="uk-width-1-1">
+        <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="your email" value="Sushi">
+            <input matInput placeholder="your email" value="Email">
           </mat-form-field>
-          <div class="uk-flex uk-flex-right">
-              <div class="uk-width-expand">
-                <button mat-button routerLink="/register">Create Account</button>
-                <button mat-button>Forgot</button>
-              </div>
-              <button mat-raised-button color="primary" routerLink="/login">SEND</button>
-          </div>
       </mat-card-content>
-    </mat-card>
-</div>
+      <mat-card-content>
+            <div>
+              <button mat-raised-button style="width: 100%;" color="primary" routerLink="/login">KIRIM</button>
+            </div>
+        </mat-card-content>
+        <hr>
+        <div class="uk-flex uk-flex-center">
+          <p style="color:#4f4f4f; opacity: 40;">Sudah mempunyai akun?  </p><a routerLink="/login">&nbsp;Login</a>
+        </div>
+        <div class="uk-flex uk-flex-center">
+          <p style="color:#4f4f4f; opacity: 40;">Tidak mempunyai akun?  </p><a routerLink="/Register">&nbsp;Buat akun</a>
+        </div>
+      </mat-card>
+    </div>

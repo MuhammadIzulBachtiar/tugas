@@ -4,10 +4,9 @@
         <button mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
-        <span>My Angular</span>
+        <span>Plannering</span>
         <div class="uk-width-expand"></div>
-        <small>Admin</small>
-        <button mat-button (click)="logout()">logout</button>
+        <img src="assets/picture/logo.png" style="width:50px;height:50px;"><i></i>
     </mat-toolbar>
     <!--end toolbar-->
     
@@ -16,20 +15,20 @@
         #sidenav 
         mode="side" 
         [position]="'start'" 
-        opened 
+        [opened]="false" 
         class="sidenav-left"
         [fixedInViewport]="true" 
         [fixedTopGap]="64"
         [fixedBottomGap]="0">
     
-      <mat-nav-list>
-            <mat-list-item routerLink="/admin/dashboard">
-                <mat-icon matListIcon>dashboard</mat-icon>
-                <h3 matLine>Dasboard</h3>
-            </mat-list-item>
+        <mat-nav-list>
             <mat-list-item routerLink="/admin/product">
-                <mat-icon matListIcon>camera_enhance</mat-icon>
-                <h3 matLine>Products</h3>
+                <mat-icon matListIcon>list_alt</mat-icon>
+                <h3 matLine>Agenda</h3>
+            </mat-list-item>
+            <mat-list-item routerLink="/admin/dashboard">
+                <mat-icon matListIcon>account_circle</mat-icon>
+                <h3 matLine>Akun</h3>
             </mat-list-item>
        </mat-nav-list>
     
@@ -44,7 +43,7 @@
     
     </mat-sidenav>
     <!--sidenav content-->
-    <mat-sidenav-content style="padding: 20px; background-color: #ccc;">
+    <mat-sidenav-content style="padding: 20px; background-color: white;">
     <!--halaman-halaman tampil disini-->
         <router-outlet></router-outlet>
     </mat-sidenav-content>

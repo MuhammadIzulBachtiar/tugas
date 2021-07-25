@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit {
    public api:ApiService
  )
  {
-   this.title='Produk'; 
+   this.title='Agenda'; 
    this.getBooks();   
  }
  ngOnInit(): void {
