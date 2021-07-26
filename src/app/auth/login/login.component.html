@@ -1,8 +1,10 @@
-<div class="uk-flex uk-flex-middle uk-flex-center uk-height-viewport" style="background-image: url('assets/wp_1.jpg'); background-size: cover; background-position: center;">  
+<div class="uk-flex uk-flex-middle uk-flex-center uk-height-viewport" style="background: #f7f8f9">  
   <mat-card class="uk-width-1-3@m">
+    <p>&nbsp;</p>
     <div class="uk-flex uk-flex-center">
-    <img src="assets/picture/logo.png" style="width:200px;height:200px;"><i></i>
+    <img src="assets/picture/logo.png" style="width:219,125px;height:178px;"><i></i>
     </div>
+    <p>&nbsp;</p>
       <div class="uk-flex uk-flex-center">
           <h3 style="color:#4f4f4f"><b>LOGIN</b></h3>
       </div>
@@ -13,13 +15,16 @@
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Password</mat-label>
-          <input type="password" matInput placeholder="Your password" [(ngModel)]="user.password">
+          <input matInput [type]="hide ? 'password':'text'" placeholder="Your password" [(ngModel)]="user.password"  required>
+          <button mat-icon-button matSuffix (click)="hide = !hide">
+            <mat-icon>{{hide ? 'visibility_off': 'visibility'}}</mat-icon>
+          </button>
         </mat-form-field>
         <a routerLink="/forgot">Lupa password?</a>
     </mat-card-content>
     <mat-card-content>
         <div>
-            <button mat-raised-button style="width: 100%;" color="primary" (click)="login()">LOGIN</button>
+            <button mat-raised-button style="width: 100%;" color="primary" (click)="login(user)">LOGIN</button>
         </div>
     </mat-card-content>
     <hr>

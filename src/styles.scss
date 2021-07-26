@@ -7,7 +7,7 @@
 @include mat-core();
 
 // Define your application's custom theme.
-$primary: mat-palette($mat-orange, A200);
+$primary: mat-palette($mat-light-blue, 900);
 $accent:  mat-palette($mat-pink, A200, A100, A400);
 $theme: mat-light-theme((
   color: (
@@ -20,6 +20,6 @@ $theme: mat-light-theme((
 @include angular-material-theme($theme);
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Montserrat', sans-serif; }
 
 @import './uikit.css';

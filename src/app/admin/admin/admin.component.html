@@ -1,3 +1,4 @@
+<div class="uk-height-viewport" style="background: #f7f8f9"> 
 <ng-container>
     <!--toolbar-->
     <mat-toolbar color="primary" class="example-header">
@@ -6,7 +7,7 @@
         </button>
         <span>Plannering</span>
         <div class="uk-width-expand"></div>
-        <img src="assets/picture/logo.png" style="width:50px;height:50px;"><i></i>
+        <img src="assets/picture/logoo.png" style="width:45px; height:36px;"><p>&nbsp;</p>
     </mat-toolbar>
     <!--end toolbar-->
     
@@ -23,12 +24,16 @@
     
         <mat-nav-list>
             <mat-list-item routerLink="/admin/product">
-                <mat-icon matListIcon>list_alt</mat-icon>
-                <h3 matLine>Agenda</h3>
+                <mat-icon matListIcon style="color: #01579b">list_alt</mat-icon>
+                <h3 matLine style="color: #01579b">Agenda</h3>
+            </mat-list-item>
+            <mat-list-item routerLink="/public/home">
+                <mat-icon matListIcon style="color: #01579b">event</mat-icon>
+                <h3 matLine style="color: #01579b">Kalender</h3>
             </mat-list-item>
             <mat-list-item routerLink="/admin/dashboard">
-                <mat-icon matListIcon>account_circle</mat-icon>
-                <h3 matLine>Akun</h3>
+                <mat-icon matListIcon style="color: #01579b">account_circle</mat-icon>
+                <h3 matLine style="color: #01579b">Akun</h3>
             </mat-list-item>
        </mat-nav-list>
     
@@ -43,7 +48,7 @@
     
     </mat-sidenav>
     <!--sidenav content-->
-    <mat-sidenav-content style="padding: 20px; background-color: white;">
+    <mat-sidenav-content style="padding: 20px; background-color: #f7f8f9;">
     <!--halaman-halaman tampil disini-->
         <router-outlet></router-outlet>
     </mat-sidenav-content>

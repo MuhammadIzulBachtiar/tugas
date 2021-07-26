@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "todo-4d80c": {
+      "hosting": {
+        "my-angular": [
+          "todo-4d80c"
+        ]
+      }
+    }
+  }
+}

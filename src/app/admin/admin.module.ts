@@ -30,7 +30,7 @@ const routes: Routes = [
       {
         path:'',
         pathMatch:'full',
-        redirectTo:'/admin/dashboard'
+        redirectTo:'/admin/product'
       }
  
     ]

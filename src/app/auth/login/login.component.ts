@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -9,21 +11,30 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class LoginComponent implements OnInit {
   user: any = {};
+  hide:boolean=true;
   constructor(
     public api : ApiService,
-    public router :Router
+    public router :Router,
+    public auth: AngularFireAuth
   ) { }
 
   ngOnInit(): void {
   }
-  login()
+
+  email = new FormControl('',[Validators.required, Validators.email]);
+  password= new FormControl('',[Validators.required]);
+ 
+  loading!: boolean;
+  login(user: any)
   {
-    this.api.login(this.user.email, this.user.password).subscribe(res=>{
-      localStorage.setItem('appToken',JSON.stringify(res));
-      this.router.navigate(['admin/dashboard']);
-    },err=>{
-      alert('Tidak dapat login');
-    });
+    this.loading=true;
+    this.auth.signInWithEmailAndPassword(user.email, user.password).then(res=>{
+      this.loading=false;
+      this.router.navigate(['admin/product']);
+    }).catch(err=>{
+      this.loading=false;
+      alert('Anda Tidak dapat login');
+    })
   }
 
 }
